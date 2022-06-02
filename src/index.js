@@ -13,6 +13,10 @@ const DEBOUNCE_DELAY = 300;
 const onSearch = e => {
   const name = e.target.value.trim();
 
+  if (!name.length) {
+    return;
+  }
+
   fetchCountries(name)
     .then(data => {
       const responseLength = data.length;
